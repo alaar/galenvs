@@ -1,0 +1,62 @@
+<!--
+<div class="border-form-div">
+  <%#= simple_form_for (@contact )do |f| %>
+      <%# if flash[:error].present? %>
+      <p> flash[:error]</p>
+      <%# end %>
+      <%#= f.label :name %> <br>
+      <%#= f.text_field :name, required: true, placeholder: 'Firstname Lastname' %>
+
+      <br>
+      <%#= f.label :email %> <br>
+      <%#= f.text_field :email, required: true, placeholder: 'example@email.com' %>
+
+      <br>
+      <%#= f.label :message %> <br>
+      <%#= f.text_area :message, as: :text, width: :auto, placeholder: 'Your message' %>
+
+
+      <%#= f.label :nickname, hidden: true %> <br>
+      <%#= f.text_field :nickname, hidden: true, hint: 'leave this field blank'%>
+
+
+      <%#= f.submit 'Send Message', class: "button", wrapper_html: { class: 'btn btn-success' } %>
+    <%# end %>
+</div>
+ -->
+
+
+<div class="border-form-div">
+  <div class="panel">
+    <div class="panel-heading">
+      Contact Us
+    </div>
+    <div class="panel-body">
+      <%= simple_form_for (@contact )do |f| %>
+      <% if flash[:error].present? %>
+      <p> flash[:error]</p>
+      <% end %>
+
+      <%= f.input :name, required: true, placeholder: 'Firstname Lastname' %>
+
+      <br>
+      <%= f.input :email, required: true, placeholder: 'example@email.com' %>
+
+      <br>
+      <%= f.input :phone, required:true, placeholder: '514-111-2233' %>
+
+
+      <br>
+      <%= f.input :message, as: :text, width: :auto, placeholder: 'Your message' %>
+
+
+      <%= f.label :nickname, hidden: true %> <br>
+      <%= f.text_field :nickname, hidden: true, hint: 'leave this field blank'%>
+
+
+      <%= f.submit 'Send Message', class: "button", wrapper_html: { class: 'btn btn-success' } %>
+    <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,90 @@
+<!-- <h1>Offers#index</h1>
+<p>Find me in app/views/offers/index.html.erb</p> -->
+
+
+
+<h1 class="our-products" style="text-align:center;">Our Products</h1>
+<div class="container">
+
+  <!-- <div id="flat_address">
+      <input id="autocomplete" placeholder="Enter your address"
+             onFocus="geolocate()" type="text"></input>
+  </div> -->
+
+  <div class="row ">
+
+    <% @products.each do |product| %>
+      <div class="card-container col-xs-12 col-sm-6 col-md-4">
+
+
+        <div class="container">
+          <article class="article">
+            <div class="article__image-container">
+              <%= cl_image_tag(product.photo, width: 380, height: 246, :id => "article__image") %>
+            </div>
+            <div class="article__content">
+              <h3 class="article__title"><%= product.name %></h3>
+              <!-- <p>A tortilla is a type of thin, unleavened flatbread, typically made from corn or wheat. In Spanish, "tortilla" means "small torta", or "small cake". It was first made by the indigenous peoples of Mesoamerica before European contact. The Aztecs and other Nahuatl speakers call tortillas tlaxcalli.</p> -->
+              <ul>
+                <% product.description.split('/').each do |line| %>
+                  <li><%= line %></li>
+                <% end %>
+            </ul>
+            </div>
+            <div style="text-align:center; margin-bottom: 5px; ">
+              <a data-toggle="modal" href="#myModal" class="btn btn-purple">
+              <span class="glyphicon glyphicon-plus" style="color: white" aria-hidden="true"></span>
+              More Details
+            </a>
+            </div>
+            <div style="text-align:center; margin-bottom: 5px; ">
+              <button class="btn btn-success" style= "margin-bottom: 18px;">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="color: white"></span>
+                Add to inquiry basket
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><%= product.name %></h4>
+              </div>
+              <div class="modal-body">
+                <%= cl_image_tag(product.photo, width: 570, height: 369, :id => "article__image") %>
+                <div class="article__content">
+                  <h3 class="article__title"><%= product.category %></h3>
+                  <h3 class="article__title"><%= product.subCategory %></h3>
+                  <ul>
+                    <% product.description.split('/').each do |line| %>
+                      <li><%= line %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-start">
+                <button class="btn btn-success" style= "margin-bottom: 18px;">
+                  <span class="glyphicon glyphicon-shopping-cart" style="color: white" aria-hidden="true"></span>
+                  Add to inquiry basket
+                </button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+    <% end %>
+  </div>
+</div>
+
+
+
+<!-- Button trigger modal -->
+
+

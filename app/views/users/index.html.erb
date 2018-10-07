@@ -1,0 +1,30 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2>Authorized Distributors</h2>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="extra-margin-top">Invite Distributors</h3>
+      <%= simple_form_for(User.new, url: user_invitation_path,
+                                    html: { class: 'from-inline'}) do |f|%>
+        <%= %>
+        <%= f.button :submit, 'Invite Distributor', class: 'btn-primary'%>
+      <% end %>
+    </div>
+  </div>
+</div>
