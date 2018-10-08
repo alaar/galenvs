@@ -121,7 +121,8 @@ p {
   &:hover{
     color: white;
     font-weight: bold;
-    font-size:18px;
+    opacity: 0.6;
+    // font-size:18px;
   }
 
   &:focus{

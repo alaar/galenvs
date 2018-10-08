@@ -4,11 +4,16 @@
 <!-- particles.js container -->
 <div id="particles-js"></div>
 <%= javascript_include_tag 'particles.min', 'app'%>
+
   <div class="home-content">
-    <%= image_path('logo1.png')%>
+    <%= image_tag('logo1.png', width: "100%")%>
     <h2>Simplicity Is The New Standard</h2>
-    <div class="custom-button"><%= link_to "Contact us", new_contact_path %></div>
+  </br>
+    <button style="color:white;" type="button" class="btn btn-lg btn-purple">
+      <%= link_to "Contact Us", new_contact_path %>
+    </button>
   </div>
+
 </div>
 <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
  <!-- stats.js lib -->
